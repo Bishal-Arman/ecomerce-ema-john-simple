@@ -1,0 +1,29 @@
+.header{
+    background-color: #1C2B35;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 112px;
+    padding-right: 112px;
+    height: 72px;
+}
+.header img{
+   font-family: 'Nunito';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 30px;
+   color: #FFFFFF;
+}
+.header a{
+    text-decoration: none;
+    list-style:none ;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    color: #FFFFFF;
+    margin-right: 35px;
+}
+.header a:hover{
+    color: orange;
+}
