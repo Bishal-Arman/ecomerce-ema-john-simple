@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
@@ -8,7 +8,7 @@ import ReviewItem from '../ReviewItem/ReviewItem';
 const Orders = () => {
     const {initialCart}=useLoaderData()
     const [cart,setCart]=useState(initialCart)
-   
+   const navigate=useNavigate()
     const handleRemoveItem=(id)=>{
       const remainingItem=cart.filter(product=>product.id!==id);
       setCart(remainingItem)
@@ -18,6 +18,9 @@ const Orders = () => {
     const clearCart=()=>{
         setCart([])
         deleteShoppingCart()
+       }
+    const  handleProccedShipping=()=>{
+         navigate("/shipping")
        }
    
     return (
@@ -36,7 +39,9 @@ const Orders = () => {
                 }
                 </div>
                 <div className="cart-container">
-               <Cart cart={cart} clearCart={clearCart}></Cart>
+               <Cart cart={cart} clearCart={clearCart}>
+                <button onClick={handleProccedShipping} className='mt-2'>Procced Shipping</button>
+               </Cart>
                 </div>
             </div>
             

@@ -62,7 +62,8 @@ const [cart,setCart]=useState([])
     setCart([])
     deleteShoppingCart()
    }
- 
+        
+
     return (
     <div className='shop-container'>
         <div className="product-container">
@@ -80,8 +81,7 @@ const [cart,setCart]=useState([])
              clearCart={clearCart}
              cart={cart}
              ><Link to="/orders"><button>Review Orders</button></Link></Cart>
-       
-         
+
             </div>
         </div>
     );
